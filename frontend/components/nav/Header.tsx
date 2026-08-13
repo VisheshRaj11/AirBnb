@@ -21,7 +21,7 @@ import {
 import { useAuth } from '@/lib/auth-context';
 import { toast } from 'sonner';
 
-import { bnbnbBeloIcon, AirbnbFullLogo } from './AirbnbLogo';
+import {AirbnbFullLogo } from './AirbnbLogo';
 
 export const Header: React.FC = () => {
   const { user, openAuthModal, logout, activeRoleMode, toggleRoleMode } = useAuth();
