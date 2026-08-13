@@ -1,0 +1,97 @@
+erDiagram
+    users ||--o{ listings : "hosts"
+    users ||--o{ bookings : "makes"
+    users ||--o{ reviews : "writes"
+    users ||--o{ wishlists : "saves"
+    listings ||--o{ listing_photos : "contains"
+    listings ||--o{ listing_amenities : "has"
+    amenities ||--o{ listing_amenities : "included in"
+    listings ||--o{ bookings : "receives"
+    listings ||--o{ reviews : "receives"
+    bookings ||--o| reviews : "reviewed by"
+    listings ||--o{ wishlists : "saved in"
+
+    users {
+        int id PK
+        string name
+        string email UK
+        string password_hash
+        string role
+        string avatar_url
+        boolean is_superhost
+        datetime created_at
+    }
+
+    listings {
+        int id PK
+        int host_id FK
+        string title
+        text description
+        string property_type
+        string category
+        int price_per_night
+        string currency
+        string address
+        string city
+        string state
+        string country
+        float lat
+        float lng
+        int max_guests
+        int bedrooms
+        int beds
+        float bathrooms
+        boolean is_active
+        datetime created_at
+    }
+
+    listing_photos {
+        int id PK
+        int listing_id FK
+        string url
+        int sort_order
+    }
+
+    amenities {
+        int id PK
+        string name UK
+        string icon_key
+    }
+
+    bookings {
+        int id PK
+        int listing_id FK
+        int guest_id FK
+        date check_in
+        date check_out
+        int guests_count
+        int nightly_rate_snapshot
+        int nights
+        int subtotal
+        int cleaning_fee
+        int service_fee
+        int total_price
+        string status
+        datetime created_at
+    }
+
+    reviews {
+        int id PK
+        int booking_id FK
+        int listing_id FK
+        int reviewer_id FK
+        float rating
+        float cleanliness_rating
+        float accuracy_rating
+        float checkin_rating
+        float value_rating
+        text comment
+        datetime created_at
+    }
+
+    wishlists {
+        int id PK
+        int user_id FK
+        int listing_id FK
+        datetime created_at
+    }

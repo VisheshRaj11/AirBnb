@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import 'react-day-picker/dist/style.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg-base: #0F0F0F;
+  --bg-surface: #1A1A1A;
+  --bg-surface-hover: #232323;
+  --border-color: #2E2E2E;
+  --text-primary: #F5F5F5;
+  --text-secondary: #A8A8A8;
+  --text-muted: #767676;
+  --brand-red: #FF385C;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: "Airbnb Cereal VF", Circular, "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0F0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2E2E2E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3E3E3E;
+}
+
+/* React Day Picker Dark Mode Styling */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #FF385C;
+  --rdp-background-color: #232323;
+  --rdp-outline: 2px solid #FF385C;
+  --rdp-outline-selected: 2px solid #FF385C;
+  margin: 0;
+  color: #F5F5F5;
+}
+
+.rdp-day_selected, .rdp-day_selected:hover {
+  background-color: #FF385C !important;
+  color: #FFFFFF !important;
+  border-radius: 50% !important;
+}
+
+.rdp-day_today {
+  font-weight: bold;
+  color: #FF385C;
+}
+
+.rdp-day_disabled {
+  opacity: 0.35;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.rdp-caption_label {
+  color: #F5F5F5;
+  font-weight: 600;
+}
+
+.rdp-nav_button {
+  color: #A8A8A8;
+  border-radius: 50%;
+}
+
+.rdp-nav_button:hover {
+  background-color: #232323;
+  color: #F5F5F5;
+}
+
+/* Leaflet Dark Mode Tiles Filter */
+.dark-leaflet-map .leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.dark-leaflet-map .leaflet-container {
+  background-color: #1A1A1A;
+}
+
+/* Skeleton Loading Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #1A1A1A 25%, #2A2A2A 50%, #1A1A1A 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

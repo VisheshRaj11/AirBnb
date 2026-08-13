@@ -1,0 +1,19 @@
+# OS & System files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Databases & local uploads
+*.db
+backend/airbnb.db
+backend/uploads/
+frontend/.next/
+frontend/node_modules/
+backend/__pycache__/
