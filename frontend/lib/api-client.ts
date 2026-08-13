@@ -10,7 +10,7 @@ import {
   Amenity,
 } from './types';
 
-const API_BASE_URL = 'https://airbnb-0sd0.onrender.com/api/v1';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://airbnb-0sd0.onrender.com/api/v1';
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
