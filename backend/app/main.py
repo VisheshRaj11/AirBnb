@@ -40,7 +40,7 @@ app = FastAPI(
 # Configure CORS for all deployed environments
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="https://airbnb-one-peach.vercel.app/
+    allow_origins=["https://airbnb-one-peach.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
