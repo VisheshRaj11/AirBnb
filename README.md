@@ -2,6 +2,8 @@
 
 A production-quality, responsive clone of Airbnb themed in a custom, warm dark mode palette. Built with a **Next.js 14 (App Router)** TypeScript frontend and a **Python FastAPI** backend powered by **SQLAlchemy 2.0**, **SQLite**, and **S3 / local file upload fallback**.
 
+![Airbnb Clone Dark Mode Preview](./docs/app-screenshot.png)
+
 ---
 
 ## 1. Tech Stack Overview
